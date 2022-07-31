@@ -1,0 +1,85 @@
+extends ../layout
+
+block append head
+  - const title = "Lotta Shved's personal website - CV";
+  title #{title}
+block content
+  h1 Lotta Shved
+    br
+    small Frontend Web Developer
+  section
+    header.section__header
+      h2 Experience
+    .section__content
+      -
+        const jobs = [
+          {
+            title: "Digital Element, Chelyabinsk, Russia – Frontend Web Developer",
+            years: "<time datetime='2021-09'>September 2021</time> &mdash; present",
+            stack: "HTML, CSS + PostCSS, EJS, JS, Webpack, Git, Figma",
+            responsibilities: [
+              "develop new websites using the company's own webpack-based boilerplate;",
+              "code new pages for existing websites;",
+              "develop new functionalities for existing websites."
+            ],
+            descr: "Building high-end websites for companies all over Russia promotes constant improvement in JS. "
+          },
+          {
+            title: "Tian Group, Chelyabinsk, Russia – Frontend Web Developer",
+            years: "<time datetime='2019-10'>October 2019</time> &mdash; <time datetime='2021-08'>August 2021</time>",
+            stack: "HTML, CSS, JS, Git, Webpack, Pug, Sass, Photoshop, Figma",
+            descr: "Developed new websites, worked extensively with existing websites to adapt them for mobile devices and worked with a lot of Yandex.Map API. Here started my webpack journey - my own webpack-based boilerplate was used for a few websites. I also tried out some Gulp. Worked on a project involving Vue."
+          },
+          {
+            title: "Sportmedika, Chelysbinsk, Russia – Frontend Web Developer",
+            years: "<time datetime='2019-04'>April 2019</time> &mdash; <time datetime='2019-10'>October 2019</time>",
+            stack: "HTML, CSS, JS, Git, Photoshop",
+            descr: "Started working with Git. Mostly developed new pages for existing websites."
+          },
+          {
+            title: "Minotavr74.ru – Web Developer",
+            years: "<time datetime='2011-01'>January 2011</time> &mdash; present",
+            stack: "PHP, MySQL, HTML, CSS, JS, Photoshop",
+            descr: "Developer and content administrator of the website. First version was handcrafted with PHP, MySQL, HTML and CSS with some occasional jQuery. Since 2018 it’s a Drupal Commerce based website with a theme developed by me based on Bootstrap 3."
+          }
+        ];
+      .jobs-list
+        each job in jobs
+          article.jobs-list__item
+            .job
+              h3.job__title #{job.title}
+              .job__dates
+                != job.years
+              if job.stack
+                .job__stack
+                  b Stack:
+                  |
+                  = job.stack
+              if job.responsibilities
+                ul.job__responsibilities-list
+                  each item in job.responsibilities
+                    li.job__responsibilities-item #{item}
+              if job.descr
+                .job__descr #{job.descr}
+
+  section
+    header.section__header
+      h2 Skills & Languages
+    .section__content
+      p
+        | HTML/CSS, EJS, Pug, PostCSS, Sass,  JS,  Git, Webpack
+  section
+    header.section__header
+      h2 Languages
+    .section__content
+      p
+        | Russian – native; upper intermediate to advanced English
+  section
+    header.section__header
+      h2 Education
+    .section__content
+      h3 South Ural State University, Chelyabinsk, Russia - Linguist
+      p
+        time(datetime='2004-09-01') 2004
+        | &mdash;
+        time(datetime='2010-07-01') 2010

@@ -1,0 +1,67 @@
+:focus {
+  outline: 2px dotted currentColor;
+  outline-offset: 0.25em;
+}
+
+h1,
+.h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+h1,
+.h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--c-theme);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  color: var(--c-aux);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -0.5em;
+    width: 0.25em;
+    height: 1em;
+    background: var(--c-theme);
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+  color: var(--c-theme);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

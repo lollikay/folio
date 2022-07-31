@@ -1,0 +1,34 @@
+.cells {
+  --cellBasis: 100%;
+  --cellMaxWidth: 100%;
+  --cellGrow: 0;
+  --cellShrink: 0;
+  --cellGutter: var(--gutter, 1rem);
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--cellGutter) * -1);
+  margin-right: calc(var(--cellGutter) * -1);
+
+  &--2 {
+    @media (min-width: 576px) {
+      --cellBasis: 50%;
+      --cellMaxWidth: 50%;
+    }
+  }
+}
+
+.cell {
+  flex: var(--cellGrow) var(--cellShrink) var(--cellBasis);
+  max-width: var(--cellMaxWidth);
+  padding-left: var(--cellGutter);
+  padding-right: var(--cellGutter);
+
+  &-auto {
+    --cellBasis: auto;
+  }
+}
+
+.fx-align-center {
+  align-items: center;
+}

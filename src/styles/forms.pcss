@@ -1,0 +1,51 @@
+.form {
+  padding: 1.5rem;
+  background: var(--c-bg-neutral-1);
+
+  &__field,
+  &__label,
+  &__input {
+    display: block;
+  }
+
+  &__field {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: -0.5rem;
+    }
+
+    &-row {
+      align-items: center;
+    }
+
+    &--submit {
+      margin-top: 2rem;
+    }
+  }
+
+  &__label,
+  &__input {
+    margin-bottom: 0.5rem;
+  }
+
+  &__label {
+    &::after {
+      content: ":";
+    }
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 25rem;
+    min-height: 2rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--c-theme);
+    border-radius: 0;
+  }
+
+  &__submit {
+    margin-bottom: 0.5rem;
+  }
+}

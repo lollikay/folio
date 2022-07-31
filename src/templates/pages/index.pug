@@ -1,0 +1,24 @@
+extends ../layout
+
+block append head
+  - const title = "Lotta Shved's personal website - list of pages";
+  title #{title}
+block content
+  h1 List of pages
+  section
+    -
+      const pages = [
+        {
+          title: "List of pages",
+          href: "./index.html"
+        },
+        {
+          title: "CV",
+          href: "./cv.html"
+        }
+      ];
+    ul
+      each page in pages
+        li
+          a(href=page.href)= page.title
+  //include ./../components/react-example/template.pug

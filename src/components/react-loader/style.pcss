@@ -1,0 +1,23 @@
+.react-loader {
+  --size: 3rem;
+
+  width: var(--size);
+  height: var(--size);
+  margin: 3rem;
+  border: 5px solid var(--c-theme);
+  border-bottom-width: 1px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(40deg);
+  }
+
+  to {
+    transform: rotate(400deg);
+  }
+}

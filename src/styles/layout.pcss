@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+
+  &::after,
+  &::before {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 1.4;
+  background: var(--c-light, #fff);
+  color: var(--c-font-base, #222);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter, 1rem);
+  padding-right: var(--gutter, 1rem);
+}

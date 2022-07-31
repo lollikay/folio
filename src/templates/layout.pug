@@ -1,0 +1,33 @@
+doctype html
+html(lang="ru")
+  block head
+    head
+      meta(charset="utf-8")
+      meta(content="width=device-width, initial-scale=1", name="viewport")
+      meta(name="format-detection", content="telephone=no")
+      link(rel="icon" type="image/x-icon" href=require("../favicon.ico"))
+      link(href=require('../styles/styles.css') rel='stylesheet')
+  body
+    main
+      block header
+        header.header
+          .container
+            .cells.header__row
+              .cell.header__logo
+                .logo
+                  .h1 Lotta Shved
+              .cell.header__contact
+                span(data-js-email)
+      block page-content
+        .content
+          .container
+            block content
+      block footer
+        footer.footer
+          .container
+            .cells.footer__row
+              .cell.footer__copy
+                - const year = new Date().getFullYear();
+                | &copy; Lotta Shved, #{year}
+
+    script(src=require('../js/index.js'))

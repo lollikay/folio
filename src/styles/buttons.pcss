@@ -1,0 +1,35 @@
+.button {
+  --display: inline-flex;
+  --py: 0.5rem;
+  --px: 1rem;
+  --fontSize: 0.8rem;
+  --fontWeight: bold;
+  --letterspacing: 0.01em;
+  --lineHeight: 1.25;
+  --textTransform: uppercase;
+  --bg: var(--c-theme);
+  --borderColor: var(--c-theme);
+  --color: #fff;
+
+  display: var(--display, inline-flex);
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 2rem;
+  padding: var(--py) var(--px);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  letter-spacing: var(--letterspacing);
+  line-height: var(--lineHeight);
+  text-transform: var(--textTransform);
+  background: var(--bg);
+  border: 1px solid var(--borderColor);
+  color: var(--color);
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+
+  &:hover {
+    --bg: var(--c-font-base);
+    --color: var(--c-theme);
+  }
+}
